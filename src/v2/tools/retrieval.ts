@@ -16,7 +16,7 @@ export const FindEntitiesByMetadataInput = z.object({
  *
  * @input
  * - `libraryName`: (string, required) 要搜索的知识库的名称。
- * - `metaDataPattern`: (string, required) 用于在实体 Front Matter 中搜索的“键: 值”正则表达式模式。
+ * - `metaDataPattern`: (string, required) 用于在实体 Front Matter 中搜索的"键: 值"正则表达式模式。
  *
  * @output
  * - (string) 返回一个字符串，指示找到的实体数量和实体名称列表。
@@ -66,7 +66,7 @@ z.object({
  * @input
  * - `libraryName`: (string, required) 要搜索的知识库的名称。
  * - `toEntity`: (string, optional) 关系指向的目标实体名称。
- * - `relationType`: (string, optional) 关系类型（例如，“is-a”，“part-of”）。
+ * - `relationType`: (string, optional) 关系类型（例如，"is-a"，"part-of"）。
  *
  * @output
  * - (string) 目前返回一个占位符消息，指示该工具尚未完全实现。
@@ -96,9 +96,6 @@ export const findRelationsTool: McpHandlerDefinition<typeof FindRelationsInput, 
   }
 };
 
-
-// Export all tools as an array, similar to entity.ts
-export const retrievalTools = [findEntitiesByMetadataTool, findRelationsTool, searchInContentsTool, searchAnywhereTool];
 
 // --- Tool: search_in_contents ---
 
@@ -166,3 +163,5 @@ export const searchAnywhereTool = {
   }
 };
 
+// Export all tools as an array, similar to entity.ts
+export const retrievalTools = [findEntitiesByMetadataTool, findRelationsTool, searchInContentsTool, searchAnywhereTool];

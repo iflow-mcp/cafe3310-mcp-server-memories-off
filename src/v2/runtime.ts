@@ -11,9 +11,7 @@ export const JOURNEYS_DIR = 'journeys';
 export const META_FILE = 'meta.md';
 
 // Parses the library paths from environment variables.
-const librariesStr = process.env['MEM_LIBRARIES'];
-checks(!!librariesStr, 'MEM_LIBRARIES environment variable is not set. Please provide a comma-separated list of name:path pairs.');
-
+const librariesStr = process.env['MEM_LIBRARIES'] || 'default:/tmp/mcp-memories';
 const libraries = new Map<string, string>();
 
 // Parse the MEM_LIBRARIES environment variable and ensure subdirectories exist

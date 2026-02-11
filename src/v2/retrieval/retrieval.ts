@@ -1,4 +1,3 @@
-import '../../test/setup';
 import shell from 'shelljs';
 import path from 'path';
 import {
